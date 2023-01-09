@@ -1,38 +1,103 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Karla', sans-serif;
+  color: #293264;
+  height: 100vh;
+}
+
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.homeContainer {
+  height: 90vh;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+h1 {
+  font-weight: 700;
+  font-size: 3rem;
+  margin-bottom: 7px;
+}
+
+p {
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.2rem;
+  color: #293264;
+  margin-bottom: 30px;
+}
+
+.container {
+  width: 70vw;
+  height: 90vh;
+  margin: 4rem auto 0 auto;
+}
+
+form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+}
+
+h2 {
+  font-weight: 700;
+  font-style: normal;
+  font-size: 1.3rem;
+  margin-bottom: 20px;
+}
+
+.answers > button {
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 0.75rem;
+  color: #293264;
+  padding: 8px 20px;
+  border-radius: 8px;
+}
+
+.answers {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 5px;
+}
+
+button {
+  background-color: #4d5b9e;
+  color: #f5f7fb;
+  border: none;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  padding: 20px 50px;
+  border-radius: 15px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.bottom {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+.checkAnswers {
+  margin: 2rem auto 0 auto;
+}
+
+hr {
+  width: 70vw;
+  border: 0.8px solid #dbdef0;
+  margin-bottom: 20px;
 }
