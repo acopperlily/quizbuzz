@@ -1,6 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react';
 import AllAnswers from './AllAnswers';
 import { nanoid } from 'nanoid';
+// import Confetti from 'react-confetti';
+import Confetti from './Confetti';
 
 function Quiz() {
   const [quizData, setQuizData] = useState([]);
@@ -89,6 +91,7 @@ function Quiz() {
 
   const newGame = () => {
     setIsDone(false);
+    setCount(0);
     setStartGame(true);
   };
 
@@ -118,6 +121,7 @@ function Quiz() {
         {!isDone && <div className='checkAnswers'><button>Check answers</button></div>}
       </form>
       <div className='bottom'>
+        {count === chosenAnswers.length ? <Confetti /> : null}
         {isDone && <h3>You scored {count}/{quizData.length} correct answers</h3>}
         {isDone && <button onClick={newGame}>Play again</button>}
       </div>

@@ -4,7 +4,7 @@ import Home from './components/Home';
 import Quiz from './components/Quiz';
 
 function App() {
-  const [isGame, setIsGame] = useState(false);
+  const [isGame, setIsGame] = useState(true);
 
   const startGame = () => {
     console.log('starting game');
