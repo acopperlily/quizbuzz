@@ -33,7 +33,15 @@ function AllAnswers(props) {
       {props.allAnswers.map((answer, i) => {
         return (
           <button 
-            className={props.answer === answer ? 'correct' : 'no'}
+            className={
+              props.isDone && props.answer === answer
+              ? 'correctAnswer'
+              : props.isDone && props.chosenAnswers.includes(answer)
+              ? 'incorrectAnswer'
+              : props.chosenAnswers.includes(answer)
+              ? 'selectedAnswer'
+              : 'unselectedAnswer'}
+            
             key={nanoid()}
             onClick={e => {
               props.updateChosenAnswer(e);
@@ -43,7 +51,7 @@ function AllAnswers(props) {
             value={answer}
             data-index={props.index}
             disabled={props.isDone}
-            style={(props.isDone && props.answer === answer) ? {background: '#94d7a2', border: 'none'} : (props.isDone && props.chosenAnswers.includes(answer)) ? {background: '#f8bcbc', border: 'none'} : (props.chosenAnswers.includes(answer)) ? {background: '#d6dbf5', border: 'none'} : {background: '#f5f7fb', border: '1px solid #293264'}}
+            // style={(props.isDone && props.answer === answer) ? {background: '#94d7a2', border: 'none'} : (props.isDone && props.chosenAnswers.includes(answer)) ? {background: '#f8bcbc', border: 'none'} : (props.chosenAnswers.includes(answer)) ? {background: '#d6dbf5', border: 'none'} : {background: '#f5f7fb', border: '1px solid #293264'}}
           >
             {answer}
           </button>

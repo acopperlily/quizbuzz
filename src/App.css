@@ -1,3 +1,21 @@
+:root {
+  --bg-color: white;
+  --unselected-color: #f5f7fb;
+  --selected-color: #d6dbf5;
+  --correct-color: #94d7a2;
+  --incorrect-color: #f8bcbc;
+  --main-text-color: #293264;
+}
+
+[datatheme="dark"] {
+  --bg-color: black;
+  --main-text-color: #7179a7;
+  --unselected-color: #bcd0f8;
+  --selected-color: #90a1f6;
+  --correct-color: #2add51;
+  --incorrect-color: #ee5353;
+}
+
 * {
   padding: 0;
   margin: 0;
@@ -6,13 +24,17 @@
 
 body {
   font-family: 'Karla', sans-serif;
-  color: #293264;
+  color: var(--main-text-color);
   height: 100vh;
 }
 
 .App {
+  height: 100vh;
   display: flex;
   justify-content: center;
+  background: var(--bg-color);
+  color: var(--main-text-color);
+
 }
 
 .homeContainer {
@@ -34,7 +56,7 @@ p {
   font-style: normal;
   font-weight: 400;
   font-size: 1.2rem;
-  color: #293264;
+  color: var(--main-text-color);
   margin-bottom: 30px;
 }
 
@@ -100,4 +122,24 @@ hr {
   width: 70vw;
   border: 0.8px solid #dbdef0;
   margin-bottom: 20px;
+}
+
+.correctAnswer {
+  background: var(--correct-color);
+  border: none;
+}
+
+.incorrectAnswer {
+  background: var(--incorrect-color);
+  border: none;
+}
+
+.selectedAnswer {
+  background: var(--selected-color);
+  border: none;
+}
+
+.unselectedAnswer {
+  background: var(--unselected-color);
+  border: 1px solid var(--main-text-color);
 }

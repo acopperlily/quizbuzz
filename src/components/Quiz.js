@@ -121,7 +121,7 @@ function Quiz() {
         {!isDone && <div className='checkAnswers'><button>Check answers</button></div>}
       </form>
       <div className='bottom'>
-        {count === chosenAnswers.length ? <Confetti /> : null}
+        {count === 5 ? <Confetti /> : null}
         {isDone && <h3>You scored {count}/{quizData.length} correct answers</h3>}
         {isDone && <button onClick={newGame}>Play again</button>}
       </div>
