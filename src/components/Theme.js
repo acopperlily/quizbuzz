@@ -1,17 +1,19 @@
 import React from "react";
 import { useState } from "react";
+import { FaSun, FaMoon } from 'react-icons/fa';
 
 const Theme = props => {
   // const [isChecked, setIsChecked] = useState(false);
 
   return (
-    <form>
-      <label htmlFor="theme">{props.isChecked ? 'Dark' : 'Light'}</label>
+    <form className="toggleTheme">
+      <label htmlFor="theme">
+        {props.isDark ? <FaMoon /> : <FaSun />}</label>
       <input
         type="checkbox"
         name="theme"
         id="theme"
-        checked={props.isChecked}
+        checked={props.isDark}
         onChange={props.toggleTheme}
       />
     </form>

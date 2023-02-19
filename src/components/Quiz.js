@@ -116,7 +116,7 @@ function Quiz() {
 
   return (
     <div className='container'>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className="submitForm">
         {questions}
         {!isDone && <div className='checkAnswers'><button>Check answers</button></div>}
       </form>
