@@ -11,6 +11,11 @@ function Quiz() {
   const [isDone, setIsDone] = useState(false);
   const [allAnswers, setAllAnswers] = useState([]);
   const [startGame, setStartGame] = useState(false);
+  const [score, setScore] = useState(0);
+  const [scores, setScores] = useState(
+    () => JSON.parse(localStorage.getItem('scores')) || []
+  );
+  console.log('score, scores?', score, scores);
 
   const decode = text => {
     let result = new DOMParser().parseFromString(text, 'text/html');
@@ -80,9 +85,16 @@ function Quiz() {
         correct++;
     }
     setIsDone(true);
+    setScores(prevScores => [...prevScores, correct]);
+
     setCount(correct);
+    setScore(correct);
     return correct;
   };
+
+  useEffect(() => {
+    localStorage.setItem('scores', JSON.stringify(scores));
+  }, [score]);
 
   const handleSubmit = e => {
     e.preventDefault();

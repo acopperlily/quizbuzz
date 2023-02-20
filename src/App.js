@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
 import Home from './components/Home';
 import Quiz from './components/Quiz';
@@ -8,6 +8,15 @@ import Footer from './components/Footer';
 function App() {
   const [isGame, setIsGame] = useState(false);
   const [isDark, setIsDark] = useState(false);
+
+  useEffect(() => {
+    const isDark = JSON.parse(localStorage.getItem('isDark'));
+    if (isDark) setIsDark(isDark);
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem('isDark', JSON.stringify(isDark));
+  }, [isDark]);
 
   const startGame = () => {
     console.log('starting game');

@@ -151,6 +151,10 @@ button:disabled {
   cursor: default;
 }
 
+button:disabled:active {
+  transform: none;
+}
+
 .bottom {
   margin-top: 2rem;
   display: flex;
