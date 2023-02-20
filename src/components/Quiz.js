@@ -1,10 +1,10 @@
 import React, { useState, useEffect, useRef } from 'react';
 import AllAnswers from './AllAnswers';
 import { nanoid } from 'nanoid';
-// import Confetti from 'react-confetti';
 import Confetti from './Confetti';
 
 function Quiz() {
+
   const [quizData, setQuizData] = useState([]);
   const [count, setCount] = useState(0);
   const [chosenAnswers, setChosenAnswers] = useState([]);
@@ -15,7 +15,7 @@ function Quiz() {
   const [scores, setScores] = useState(
     () => JSON.parse(localStorage.getItem('scores')) || []
   );
-  console.log('score, scores?', score, scores);
+  const [average, setAverage] = useState();
 
   const decode = text => {
     let result = new DOMParser().parseFromString(text, 'text/html');
@@ -96,6 +96,17 @@ function Quiz() {
     localStorage.setItem('scores', JSON.stringify(scores));
   }, [score]);
 
+  useEffect(() => {
+    function getAverage() {
+      let sum = scores.reduce((acc, c) => acc + c, 0);
+      sum = sum / scores.length;
+      sum = Number(sum.toFixed(1));
+      console.log('average effect:', sum);
+      setAverage(sum);
+    }
+    getAverage();
+  }, [scores]);
+
   const handleSubmit = e => {
     e.preventDefault();
     checkAnswers();
@@ -136,6 +147,7 @@ function Quiz() {
         {count === 5 ? <Confetti /> : null}
         {isDone && <h3>You scored {count}/{quizData.length} correct answers</h3>}
         {isDone && <button onClick={newGame}>Play again</button>}
+        {average && <p>Average score: {average}</p>}
       </div>
     </div>
   );

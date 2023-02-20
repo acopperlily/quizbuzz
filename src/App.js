@@ -6,13 +6,10 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 
 function App() {
-  const [isGame, setIsGame] = useState(false);
-  const [isDark, setIsDark] = useState(false);
-
-  useEffect(() => {
-    const isDark = JSON.parse(localStorage.getItem('isDark'));
-    if (isDark) setIsDark(isDark);
-  }, []);
+  const [isGame, setIsGame] = useState(true);
+  const [isDark, setIsDark] = useState(
+    () => JSON.parse(localStorage.getItem('isDark'))
+  );
 
   useEffect(() => {
     localStorage.setItem('isDark', JSON.stringify(isDark));
