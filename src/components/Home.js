@@ -4,7 +4,7 @@ function Home(props) {
   return (
     <div className="homeContainer">
       <section className='home'>
-        <h1>Quizzical</h1>
+        <h1>QuizBuzz</h1>
         <p>Test your trivial knowledge</p>
         <button className='homeButton' onClick={props.startGame}>Start quiz</button>
       </section>

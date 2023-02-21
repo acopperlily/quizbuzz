@@ -138,7 +138,7 @@ function Quiz() {
   });
 
   return (
-    <div className='container'>
+    <>
       <form onSubmit={handleSubmit} className="submitForm">
         {questions}
         {!isDone && <div className='checkAnswers'><button>Check answers</button></div>}
@@ -149,7 +149,7 @@ function Quiz() {
         {isDone && <button onClick={newGame}>Play again</button>}
         {average && <p>Average score: {average}</p>}
       </div>
-    </div>
+    </>
   );
 }
 

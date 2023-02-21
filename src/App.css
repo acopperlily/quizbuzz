@@ -6,6 +6,7 @@
   --incorrect-bg-color: #f8bcbc;
   --main-text-color: #293264;
   --answer-text-color: #293264;
+  /* --header-color: #5a2034; */
 }
 
 [datatheme="dark"] {
@@ -25,33 +26,41 @@
 }
 
 body {
-  font-family: 'Karla', sans-serif;
+  font-family: 'Cabin', sans-serif;
   color: var(--main-text-color);
-  height: 100vh;
+  /* height: 100vh; */
 }
 
 .App {
   min-height: 100vh;
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  /* align-items: center; */
+  align-items: center;
+  gap: 2rem;
   background: var(--bg-color);
   color: var(--main-text-color);
 
 }
 
 header {
-  padding: 0.5rem;
-  background: var(--incorrect-bg-color);
+  width: 100%;
+  padding: 0.5rem 1rem;
+  padding: calc(0.1rem + 1vw) calc(1rem + 2vw);
+  padding: 1% 10%;
+  background: #5a2034;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: baseline;
 }
 
 .logo {
   margin: 0;
-  font-size: 2rem;
+  font-size: 1.5rem;
+  font-size: calc(1.1rem + 2vw);
+  color: white;
+  /* font-variant: small-caps; */
 }
 
 .toggleTheme {
@@ -64,12 +73,18 @@ label {
 }
 
 main {
+  width: 100%;
+  max-width: 600px;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  /* border: 1px solid yellow; */
 }
 
 .homeContainer {
   /* height: 90vh; */
+  border: 1px solid red;
   text-align: center;
   display: flex;
   justify-content: center;
@@ -77,51 +92,68 @@ main {
 }
 
 h1 {
-  font-weight: 700;
-  font-size: 3rem;
-  margin-bottom: 7px;
+  /* font-weight: 700; */
+  /* font-size: 3rem; */
+  /* margin-bottom: 7px; */
 }
 
 p {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Cabin', sans-serif;
   font-style: normal;
   font-weight: 400;
-  font-size: 1.2rem;
+  font-size: 0.8rem;
   color: var(--main-text-color);
-  margin-bottom: 30px;
+  /* margin-bottom: 30px; */
 }
 
 .container {
-  width: 70vw;
+  /* width: 70vw; */
   /* height: 90vh; */
-  margin: 4rem auto 0 auto;
+  /* margin: 4rem auto 0 auto; */
+  /* border: 1px solid yellow; */
 }
 
 .submitForm {
+  width: 95%;
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
+  /* flex-wrap: wrap; */
   gap: 0.9rem;
+  margin-bottom: 2rem;
 }
 
 h2 {
+  /* border: 1px solid palevioletred; */
+  /* font-weight: 700;
+  font-style: normal;
+  font-size: 0.8rem;
+  margin-bottom: 20px; */
+}
+
+.question {
+  /* text-align: center; */
   font-weight: 700;
   font-style: normal;
-  font-size: 1.3rem;
-  margin-bottom: 20px;
+  font-size: 0.9rem;
+  font-size: calc(0.7rem + 1vw);
+  margin-bottom: 0.7rem;
 }
 
 .answers > button {
   font-family: 'Inter', sans-serif;
   font-weight: 500;
-  font-size: 0.75rem;
+  font-size: 0.5rem;
   color: var(--answer-text-color);
   padding: 8px 20px;
-  border-radius: 8px;
+  border-radius: 50px;
 }
 
 .answers {
+  /* border: 1px solid blue; */
   display: flex;
-  gap: 1rem;
+  flex-wrap: wrap;
+  /* justify-content: center; */
+  gap: 0.5rem;
   margin-bottom: 5px;
 }
 
@@ -129,10 +161,10 @@ button {
   background-color: #4d5b9e;
   color: #f5f7fb;
   border: none;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Cabin', sans-serif;
   font-weight: 600;
-  padding: 20px 50px;
-  border-radius: 15px;
+  padding: 1rem 2rem;
+  border-radius: 50px;
   font-size: 1rem;
   cursor: pointer;
   opacity: 0.9;
@@ -156,19 +188,22 @@ button:disabled:active {
 }
 
 .bottom {
-  margin-top: 2rem;
+  /* margin-top: 2rem; */
   display: flex;
+  /* flex-wrap: wrap; */
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 2rem;
+  gap: 1rem;
 }
 
 .checkAnswers {
-  margin: 2rem auto 0 auto;
+  margin: 1.5rem auto 0 auto;
+  flex: 1 1 100%;
 }
 
 hr {
-  width: 70vw;
+  /* width: 70%; */
   border: 0.8px solid var(--selected-bg-color);
   margin-bottom: 20px;
 }
@@ -196,10 +231,12 @@ hr {
 
 footer {
   /* border: 1px solid yellow; */
+  width: 100%;
   padding: 1rem;
-  background: var(--unselected-bg-color);
+  background: rgb(10, 34, 59);
   color: var(--answer-text-color);
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 0.5rem;

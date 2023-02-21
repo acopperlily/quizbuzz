@@ -6,7 +6,7 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 
 function App() {
-  const [isGame, setIsGame] = useState(true);
+  const [isGame, setIsGame] = useState(false);
   const [isDark, setIsDark] = useState(
     () => JSON.parse(localStorage.getItem('isDark'))
   );
