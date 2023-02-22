@@ -122,7 +122,7 @@ function Quiz() {
     return (
       <div className='trivia' key={nanoid()}>
         {i !== 0 && <hr />}
-        <h2 className='question' key={nanoid()}>{data.question}</h2>
+        <h2 className='question' key={nanoid()}>{i+1}. {data.question}</h2>
         <AllAnswers 
           key={nanoid()}
           index={i}
