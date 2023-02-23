@@ -89,7 +89,7 @@ main {
 
 .homeContainer {
   /* height: 90vh; */
-  border: 1px solid red;
+  /* border: 1px solid red; */
   text-align: center;
   display: flex;
   justify-content: center;
